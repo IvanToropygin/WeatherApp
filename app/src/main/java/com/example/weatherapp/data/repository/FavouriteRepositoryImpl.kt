@@ -5,9 +5,9 @@ import com.example.weatherapp.data.mapper.toDbModel
 import com.example.weatherapp.data.mapper.toEntities
 import com.example.weatherapp.domain.entity.City
 import com.example.weatherapp.domain.repository.FavouriteRepository
-import jakarta.inject.Inject
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import javax.inject.Inject
 
 class FavouriteRepositoryImpl @Inject constructor(
     private val favouritesCityDao: FavouritesCityDao
@@ -19,9 +19,11 @@ class FavouriteRepositoryImpl @Inject constructor(
     override fun observeIsFavourite(cityId: Int): Flow<Boolean> = favouritesCityDao
         .observeIsFavourite(cityId)
 
-    override suspend fun addToFavourite(city: City) = favouritesCityDao
-        .addToFavourite(city.toDbModel())
+    override suspend fun addToFavourite(city: City) {
+        favouritesCityDao.addToFavourite(city.toDbModel())
+    }
 
-    override suspend fun removeFromFavourite(cityId: Int) = favouritesCityDao
-        .removeFromFavourite(cityId)
+    override suspend fun removeFromFavourite(cityId: Int) {
+        favouritesCityDao.removeFromFavourite(cityId)
+    }
 }

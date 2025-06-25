@@ -5,7 +5,7 @@ import com.example.weatherapp.data.network.api.ApiService
 import com.example.weatherapp.domain.entity.Forecast
 import com.example.weatherapp.domain.entity.Weather
 import com.example.weatherapp.domain.repository.WeatherRepository
-import jakarta.inject.Inject
+import javax.inject.Inject
 
 class WeatherRepositoryImpl @Inject constructor(
     private val apiService: ApiService

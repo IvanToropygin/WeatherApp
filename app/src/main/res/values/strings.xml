@@ -5,4 +5,7 @@
     <string name="search_field">Enter to search</string>
     <string name="back">Back</string>
     <string name="upcoming">Upcoming</string>
+    <string name="search">search</string>
+    <string name="cannot_find_the_city">Cannot find the city ((</string>
+    <string name="error_network">Someone trouble with internet. Please, try later</string>
 </resources>
